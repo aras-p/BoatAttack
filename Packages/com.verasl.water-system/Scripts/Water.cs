@@ -348,16 +348,6 @@ namespace WaterSystem
             _depthCam.targetTexture = null;
         }
 
-        private void OnDrawGizmos() {
-            if(!Application.isPlaying)
-            {
-                #if UNITY_EDITOR
-                waterTime = (float)UnityEditor.EditorApplication.timeSinceStartup;
-                #endif
-                Shader.SetGlobalFloat("_GlobalTime", waterTime);
-            }
-        }
-
         [System.Serializable]
         public enum DebugMode { none, stationary, screen };
     }
